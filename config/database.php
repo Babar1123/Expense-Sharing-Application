@@ -17,7 +17,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'sqlite'),
+    'default' => env('DB_CONNECTION', 'mongodb'),
 
     /*
     |--------------------------------------------------------------------------
@@ -42,6 +42,11 @@ return [
             'journal_mode' => null,
             'synchronous' => null,
             'transaction_mode' => 'DEFERRED',
+        ],
+        'mongodb' => [
+        'driver'   => 'mongodb',
+        'dsn'      => env('MONGODB_URI', 'mongodb://127.0.0.1:27017'),
+        'database' => env('MONGODB_DATABASE', 'splitwise'),
         ],
 
         'mysql' => [
